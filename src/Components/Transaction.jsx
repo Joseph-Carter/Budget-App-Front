@@ -1,4 +1,4 @@
-import React from 'react';
+const API = import.meta.env.VITE_BASE_URL
 
 const Transaction = ({transaction, index}) => {
     return (

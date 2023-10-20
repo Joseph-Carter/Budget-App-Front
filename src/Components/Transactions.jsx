@@ -16,10 +16,10 @@ const Transactions = () => {
     return (
         <div className="Transactions">
         <section>
+                <h1>Expenses</h1>
           <table>
             <thead>
               <tr>
-                <h1>Expenses</h1>
               </tr>
             </thead>
             <tbody>
