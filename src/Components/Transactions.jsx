@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Transaction from "./Transaction";
 const API = import.meta.env.VITE_BASE_URL
 
 

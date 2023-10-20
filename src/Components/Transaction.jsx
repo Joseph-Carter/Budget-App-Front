@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Transaction = () => {
+const Transaction = ({Transaction, index}) => {
     return (
         <div className='transaction'>
             
