@@ -5,7 +5,7 @@ const Transaction = ({transaction, index}) => {
         <div className='transaction'>
             <tr>
                 <td className='date'>
-                    {transaction.date ? (<span>{transaction.date}</span>) : 'purchase is pending'}
+                    {transaction.date ? (<span>{transaction.date}</span>) : 'purchase date is pending'}
                 </td>
                 <td className='item' style={{ cursor: "alias" }}>
                     <a href={`/transactions/${index}`}>{transaction.itemName}</a>
