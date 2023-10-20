@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Transaction from "./Transaction";
 const API = import.meta.env.VITE_BASE_URL
 
 
@@ -13,9 +14,22 @@ const Transactions = () => {
     }, [])
 
     return (
-        <div className="transactions">
-            
-        </div>
+        <div className="Transactions">
+        <section>
+          <table>
+            <thead>
+              <tr>
+                <h1>Expenses</h1>
+              </tr>
+            </thead>
+            <tbody>
+              {transactions.map((transaction, index) => {
+                return <Transaction key={index} transaction={transaction} index={index} />;
+              })}
+            </tbody>
+          </table>
+        </section>
+      </div>
     );
 }
 

@@ -20,9 +20,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/transactions" element={<Index />} />
-          <Route path="/transactions/new" element={<NewTransaction />} />
+          {/* <Route path="/transactions/new" element={<NewTransaction />} /> */}
           <Route path="transactions/:index" element={<Show />} />
-          <Route path="/transactions/:index" element={<Editpage />} />
+          {/* <Route path="/transactions/:index" element={<Editpage />} /> */}
           <Route path='/404' element={<Error />} />
         </Routes>
       </main>
