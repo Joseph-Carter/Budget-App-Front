@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
+import "./TransactionEditForm.css"
 const API = import.meta.env.VITE_BASE_URL;
 
 const TransactionEditForm = () => {

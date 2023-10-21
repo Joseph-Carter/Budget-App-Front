@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
+import "./TransactionNewForm.css"
 const API = import.meta.env.VITE_BASE_URL;
 
 const TransactionNewForm = () => {
@@ -22,12 +23,18 @@ const TransactionNewForm = () => {
     setTransaction({ ...transaction, [e.target.id]: [e.target.value] });
   };
 
-  const handleSpent = (e) => {
-    const { id, value } = e.target;
-    const isSpent = value === "true";
+  //   const handleSpent = (e) => {
+  //     const { id, value } = e.target;
+  //     const isSpent = value === "true";
 
-    setTransaction({ ...transaction, spent: isSpent });
-  };
+  //     setTransaction({ ...transaction, spent: isSpent });
+  //   };
+
+  const handleCheckboxChange = (e) => {
+    
+      setTransaction({...transaction, spent: e.target.value === "true" ? true : false}); 
+    }
+     
 
   const isDateValid = (date) => {
     const datePattern = /^\d{4}\/\d{2}\/\d{2}$/;
@@ -59,7 +66,7 @@ const TransactionNewForm = () => {
 
   const handleCategoryChange = (e) => {
     const { value } = e.target;
-    setTransaction({...transaction, category: value, });
+    setTransaction({ ...transaction, category: value });
   };
 
   const addNewTransaction = () => {
@@ -125,29 +132,31 @@ const TransactionNewForm = () => {
           className={transaction.amount === 0 ? "error-input" : ""}
         />
         <br />
-        <label htmlFor="spent">Did you spend or deposit it?</label>
+        <label>Did you spend or deposit it?</label>
         <div>
+          <label htmlFor="spent">Spent</label>
           <input
+            name="spent"
             id="spent"
             type="checkbox"
-            value="true"
+            value={true}
             checked={transaction.spent === true}
-            onChange={handleSpent}
+            onChange={handleCheckboxChange}
             required
           />
-          <label htmlFor="spent">Spent</label>
         </div>
         <br />
         <div>
+          <label htmlFor="deposit">Deposit</label>
           <input
+            name="spent"
             id="deposit"
             type="checkbox"
-            value="false"
-            checked={transaction.spent === "false"}
-            onChange={handleSpent}
+            value={false}
+            checked={transaction.spent === false}
+            onChange={handleCheckboxChange}
             required
           />
-          <label htmlFor="deposit">Deposit</label>
         </div>
         <br />
         <label htmlFor="category">Category</label>
