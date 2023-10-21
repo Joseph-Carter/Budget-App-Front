@@ -55,6 +55,11 @@ const TransactionEditForm = () => {
       e.target.classList.add("error-input");
     }
   };
+
+  const handleCategoryChange = (e) => {
+    const { value } = e.target;
+    setTransaction({...transaction, category: value, });
+  };
   
 
   const updateTransaction = () => {
@@ -149,14 +154,21 @@ const TransactionEditForm = () => {
         </div>
         <br />
         <label htmlFor="category">Category</label>
-        <input 
+        <select
           id="category"
-          type="text"
           value={transaction.category}
-          onChange={handleTextChange}
+          onChange={handleCategoryChange}
           required
-          placeholder="Enter category (Ex. Food, Income, Transportation)"
-        />
+        >
+          <option value="">Select a category</option>
+          <option value="Food">Food</option>
+          <option value="Income">Income</option>
+          <option value="Transportation">Transportation</option>
+          <option value="Accessories">Accessories</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="Savings">Savings</option>
+          <option value="Other">Other</option>
+        </select>
         <br />
         <input type="submit" />
       </form>

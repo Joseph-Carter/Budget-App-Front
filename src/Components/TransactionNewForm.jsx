@@ -23,7 +23,7 @@ const TransactionNewForm = () => {
   };
 
   const handleSpent = (e) => {
-    const { id, value } = e.target
+    const { id, value } = e.target;
     const isSpent = value === "true";
 
     setTransaction({ ...transaction, spent: isSpent });
@@ -47,7 +47,7 @@ const TransactionNewForm = () => {
   };
 
   const handleNumberChange = (e) => {
-    const { id, value} = e.target;
+    const { id, value } = e.target;
     const isNumber = parseFloat(value);
 
     if (!isNaN(isNumber)) {
@@ -57,6 +57,10 @@ const TransactionNewForm = () => {
     }
   };
 
+  const handleCategoryChange = (e) => {
+    const { value } = e.target;
+    setTransaction({...transaction, category: value, });
+  };
 
   const addNewTransaction = () => {
     const httpOptions = {
@@ -123,39 +127,45 @@ const TransactionNewForm = () => {
         <br />
         <label htmlFor="spent">Did you spend or deposit it?</label>
         <div>
-        <input
-          id="spent"
-          type="radio"
-          value="true"
-          checked={transaction.spent === true}
-          onChange={handleSpent}
-          required 
-        />
-        <label htmlFor="spent">Spent</label>
+          <input
+            id="spent"
+            type="checkbox"
+            value="true"
+            checked={transaction.spent === true}
+            onChange={handleSpent}
+            required
+          />
+          <label htmlFor="spent">Spent</label>
         </div>
         <br />
         <div>
-        <input
-          id="deposit"
-          type="radio"
-          value="false"
-          checked={transaction.spent === "false"}
-          onChange={handleSpent}
-          required
-        />
-        <label htmlFor="deposit">Deposit</label>
+          <input
+            id="deposit"
+            type="checkbox"
+            value="false"
+            checked={transaction.spent === "false"}
+            onChange={handleSpent}
+            required
+          />
+          <label htmlFor="deposit">Deposit</label>
         </div>
         <br />
         <label htmlFor="category">Category</label>
-        <input 
+        <select
           id="category"
-          type="text"
           value={transaction.category}
-          onChange={handleTextChange}
+          onChange={handleCategoryChange}
           required
-          placeholder="Enter category (Ex. Food, Income, Transportation)"
-        />
-        <br />
+        >
+          <option value="">Select a category</option>
+          <option value="Food">Food</option>
+          <option value="Income">Income</option>
+          <option value="Transportation">Transportation</option>
+          <option value="Accessories">Accessories</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="Savings">Savings</option>
+          <option value="Other">Other</option>
+        </select>
         <input type="submit" />
       </form>
     </div>
