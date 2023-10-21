@@ -31,7 +31,7 @@ const TransactionDetails = () => {
         <h3>
           Name: {transaction.itemName} Amount: {transaction.amount}
         </h3>
-        <h3>Transaction ID:{transaction.id}</h3>
+        <h3>Transaction ID: {transaction.id}</h3>
         <h5>Date: {transaction.date}</h5>
         <h5>Location: {transaction.from}</h5>
         <h5>{transaction.category}</h5>

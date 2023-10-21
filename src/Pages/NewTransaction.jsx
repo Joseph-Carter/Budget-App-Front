@@ -1,4 +1,4 @@
-import React from 'react';
+import TransactionNewForm from "../Components/TransactionNewForm";
 
 const NewTransaction = () => {
     return (
