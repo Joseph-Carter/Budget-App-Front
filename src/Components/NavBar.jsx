@@ -27,7 +27,7 @@ const NavBar = () => {
           <h1>
             <Link to="/transactions/new">Manage Transactions</Link>
           </h1>
-          <button className="authButton">
+          <button className="auth">
             <FontAwesomeIcon icon={faLock} />
             <span> Sign Up</span>
           </button>

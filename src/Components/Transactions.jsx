@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Transaction from "./Transaction";
 import "./Transactions.css";
+import AccountBalance from "./AccountBalance";
 const API = import.meta.env.VITE_BASE_URL;
 
 const Transactions = () => {
@@ -13,21 +14,27 @@ const Transactions = () => {
       .catch((error) => console.log(error));
   }, []);
 
+
   return (
     <div className="transactions">
+      <div className="balance">
+      <AccountBalance transactions={transactions} />
+      </div>
       <section>
-        <h1>Expenses</h1>
-        <h3 className="budegetinfo">
-          {transactions.map((transaction, index) => {
-            return (
-              <Transaction
-                key={index}
-                transaction={transaction}
-                index={index}
-              />
-            );
-          })}
-        </h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Item Name</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            {transactions.map((transaction, index) => (
+              <Transaction key={transaction.id || index} transaction={transaction} index={index} />
+            ))}
+          </tbody>
+        </table>
       </section>
     </div>
   );

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import "./TransactionNewForm.css"
+import { v4 as uuidv4 } from 'uuid';
 const API = import.meta.env.VITE_BASE_URL;
 
 const TransactionNewForm = () => {
@@ -10,7 +11,7 @@ const TransactionNewForm = () => {
 
   const [dateError, setDateError] = useState("");
   const [transaction, setTransaction] = useState({
-    id: 0,
+    id: uuidv4(),
     itemName: "",
     date: "",
     from: "",
@@ -107,7 +108,7 @@ const TransactionNewForm = () => {
           value={transaction.date}
           type="text"
           onChange={handleDate}
-          placeholder="yyyy-dd-mm"
+          placeholder="yyyy-mm-dd"
           required
         />
         {dateError && <div style={{ color: "red" }}>{dateError}</div>}
@@ -142,7 +143,7 @@ const TransactionNewForm = () => {
             value={true}
             checked={transaction.spent === true}
             onChange={handleCheckboxChange}
-            required
+            
           />
         </div>
         <br />
@@ -155,7 +156,7 @@ const TransactionNewForm = () => {
             value={false}
             checked={transaction.spent === false}
             onChange={handleCheckboxChange}
-            required
+            
           />
         </div>
         <br />
