@@ -7,7 +7,7 @@ import NewTransaction from './Pages/NewTransaction'
 import Show from './Pages/Show'
 import Index from './Pages/Index'
 import Editpage from './Pages/Editpage'
-
+import Error from './Pages/Error'
 
 function App() {
  
@@ -22,8 +22,8 @@ function App() {
           <Route path="/transactions" element={<Index />} />
           <Route path="/transactions/new" element={<NewTransaction />} />
           <Route path="transactions/:index" element={<Show />} />
-          {/* <Route path="/transactions/:index/edit" element={<Editpage />} /> */}
-          <Route path='/404' element={<Error />} />
+          <Route path="/transactions/:index/edit" element={<Editpage />} />
+          <Route path='/*' element={<Error />} />
         </Routes>
       </main>
     </Router>

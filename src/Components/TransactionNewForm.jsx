@@ -56,7 +56,7 @@ const TransactionNewForm = () => {
       e.target.classList.add("error-input");
     }
   };
-  
+
 
   const addNewTransaction = () => {
     const httpOptions = {
@@ -78,7 +78,7 @@ const TransactionNewForm = () => {
   };
 
   return (
-    <div className="editForm">
+    <div className="newForm">
       <form onSubmit={handleSubmit}>
         <label htmlFor="itemName">Name of Item:</label>
         <input
