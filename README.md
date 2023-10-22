@@ -36,7 +36,6 @@ Managing personal finances is essential for financial stability and planning. Pe
 - **Backend**:
   - Node.js
   - Express
-  - PostgreSQL for database storage
 
 ## Getting Started
 
