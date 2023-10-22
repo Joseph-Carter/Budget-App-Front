@@ -22,11 +22,11 @@ const TransactionEditForm = () => {
     setTransaction({ ...transaction, [e.target.id]: [e.target.value] });
   };
 
-  const handleSpent = (e) => {
-    const { id, value } = e.target
-    const isSpent = value === "true";
-
-    setTransaction({ ...transaction, spent: isSpent });
+  const handleCheckboxChange = (e) => {
+    setTransaction({
+      ...transaction,
+      spent: e.target.value === "true" ? true : false,
+    });
   };
 
   const isDateValid = (date) => {
@@ -129,29 +129,29 @@ const TransactionEditForm = () => {
           className={transaction.amount === 0 ? "error-input" : ""}
         />
         <br />
-        <label htmlFor="spent">Did you spend or deposit it?</label>
+        <label>Did you spend or deposit it?</label>
         <div>
-        <input
-          id="spent"
-          type="radio"
-          value="true"
-          checked={transaction.spent === true}
-          onChange={handleSpent}
-          required 
-        />
-        <label htmlFor="spent">Spent</label>
+          <label htmlFor="spent">Spent</label>
+          <input
+            name="spent"
+            id="spent"
+            type="checkbox"
+            value={true}
+            checked={transaction.spent === true}
+            onChange={handleCheckboxChange}
+          />
         </div>
         <br />
         <div>
-        <input
-          id="deposit"
-          type="radio"
-          value="false"
-          checked={transaction.spent === "false"}
-          onChange={handleSpent}
-          required
-        />
-        <label htmlFor="deposit">Deposit</label>
+          <label htmlFor="deposit">Deposit</label>
+          <input
+            name="spent"
+            id="deposit"
+            type="checkbox"
+            value={false}
+            checked={transaction.spent === false}
+            onChange={handleCheckboxChange}
+          />
         </div>
         <br />
         <label htmlFor="category">Category</label>

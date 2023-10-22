@@ -30,7 +30,7 @@ const Transactions = () => {
           </thead>
           <tbody>
             {transactions.map((transaction, index) => (
-              <Transaction key={transaction.id || index} transaction={transaction} index={index} />
+              <Transaction key={index} transaction={transaction} index={index} />
             ))}
           </tbody>
         </table>
