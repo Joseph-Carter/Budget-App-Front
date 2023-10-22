@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
-import "./TransactionNewForm.css"
-import { v4 as uuidv4 } from 'uuid';
+import "./TransactionNewForm.css";
+import { v4 as uuidv4 } from "uuid";
 const API = import.meta.env.VITE_BASE_URL;
 
 const TransactionNewForm = () => {
@@ -24,18 +24,12 @@ const TransactionNewForm = () => {
     setTransaction({ ...transaction, [e.target.id]: [e.target.value] });
   };
 
-  //   const handleSpent = (e) => {
-  //     const { id, value } = e.target;
-  //     const isSpent = value === "true";
-
-  //     setTransaction({ ...transaction, spent: isSpent });
-  //   };
-
   const handleCheckboxChange = (e) => {
-    
-      setTransaction({...transaction, spent: e.target.value === "true" ? true : false}); 
-    }
-     
+    setTransaction({
+      ...transaction,
+      spent: e.target.value === "true" ? true : false,
+    });
+  };
 
   const isDateValid = (date) => {
     const datePattern = /^\d{4}\/\d{2}\/\d{2}$/;
@@ -108,7 +102,7 @@ const TransactionNewForm = () => {
           value={transaction.date}
           type="text"
           onChange={handleDate}
-          placeholder="yyyy-mm-dd"
+          placeholder="yyyy/mm/dd"
           required
         />
         {dateError && <div style={{ color: "red" }}>{dateError}</div>}
@@ -143,7 +137,6 @@ const TransactionNewForm = () => {
             value={true}
             checked={transaction.spent === true}
             onChange={handleCheckboxChange}
-            
           />
         </div>
         <br />
@@ -156,7 +149,6 @@ const TransactionNewForm = () => {
             value={false}
             checked={transaction.spent === false}
             onChange={handleCheckboxChange}
-            
           />
         </div>
         <br />
