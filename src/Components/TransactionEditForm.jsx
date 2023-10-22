@@ -104,7 +104,7 @@ const TransactionEditForm = () => {
           value={transaction.date}
           type="text"
           onChange={handleDate}
-          placeholder="yyyy-mm-dd"
+          placeholder="yyyy/mm/dd"
           required
         />
         {dateError && <div style={{ color: "red" }}>{dateError}</div>}
