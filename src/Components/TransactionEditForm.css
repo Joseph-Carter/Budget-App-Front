@@ -1,8 +1,39 @@
 .editform {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background: grey;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+.editform form {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Lato', sans-serif;
-    font-size: 18px;
-    padding-top: 100px;
+    flex-direction: column;
+}
+.editform label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.editform input,
+.editform select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.editform input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+.editform input[type="submit"]:hover {
+    background-color: #0055b3;
+}
+.editform .error-input {
+    border: 1px solid #ff0000;
 }

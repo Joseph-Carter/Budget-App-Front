@@ -14,7 +14,6 @@ const Transactions = () => {
       .catch((error) => console.log(error));
   }, []);
 
-
   return (
     <div className="transactions">
       <div className="balance">

@@ -1,0 +1,19 @@
+.account-balance {
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+.green {
+    background-color: #4CAF50;
+    color: #fff;
+}
+.yellow {
+    background-color: #FFC107;
+    color: #000;
+}
+.red {
+    background-color: #F44336;
+    color: #fff;
+}

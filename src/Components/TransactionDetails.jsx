@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
+import "./TransactionDetails.css";
 const API = import.meta.env.VITE_BASE_URL;
 
 const TransactionDetails = () => {
@@ -27,29 +28,24 @@ const TransactionDetails = () => {
 
   return (
     <article>
-      <div className="transaction details">
-        <h3>
-          Name: {transaction.itemName} Amount: {transaction.amount}
-        </h3>
+      <div className="transactionDetails">
+        <h3>Item: {transaction.itemName}</h3>
+        <h3>Amount: ${transaction.amount}</h3>
         <h3>Transaction ID: {transaction.id}</h3>
         <h5>Date: {transaction.date}</h5>
         <h5>Location: {transaction.from}</h5>
-        <h5>{transaction.category}</h5>
+        <h5>Category: {transaction.category}</h5>
       </div>
       <div className="navigation">
-        <div>
-          <Link to={"/transactions"}>
-            <button>Back</button>
-          </Link>
-        </div>
-        <div>
-          <Link to={`/transactions/${index}/edit`}>
-            <button>Edit</button>
-          </Link>
-        </div>
-        <div>
-          <button onClick={transactionDelete}>Delete</button>
-        </div>
+        <Link to={"/transactions"}>
+          <button>Back</button>
+        </Link>
+
+        <Link to={`/transactions/${index}/edit`}>
+          <button>Edit</button>
+        </Link>
+
+        <button onClick={transactionDelete}>Delete</button>
       </div>
     </article>
   );

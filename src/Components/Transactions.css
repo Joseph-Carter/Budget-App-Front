@@ -1,13 +1,54 @@
 .transactions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 100px;
-
+   max-width: 800px;
+   margin: 0 auto;
+   padding: 20px;
 }
-.budegetinfo {
+.balance {
+    background-color: rgba(15,14,97,255);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: space-between;
+}
+.balance h2 {
+    margin: 0;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+thead {
+    background-color: rgba(15,14,97,255);
+    color: #fff;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+tbody re:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.account-balance {
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+.green {
+    background-color: #4CAF50;
+    color: #fff;
+}
+.yellow {
+    background-color: #FFC107;
+    color: #000;
+}
+.red {
+    background-color: #F44336;
+    color: #fff;
 }

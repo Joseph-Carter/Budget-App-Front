@@ -20,9 +20,18 @@ const AccountBalance = ({transactions}) => {
     useEffect(() => {
     calculateBalance();
     }, [transactions])
+
+    let balanceClass = "";
+    if(accountBalance > 100) {
+      balanceClass = "green";
+    } else if (accountBalance >= 0) {
+        balanceClass = "yellow";
+    } else {
+        balanceClass = "red";
+    }
     
     return (
-        <div>
+        <div className={`account-balance ${balanceClass}`}>
             <h2>Account Balance: {accountBalance}</h2>
         </div>
     );

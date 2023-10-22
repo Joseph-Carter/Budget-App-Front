@@ -26,7 +26,7 @@
 .carterLogo {
     width: 350px;
 }
-.authButton {
+button.auth {
     display: flex;
     width: 120px;
     align-items: center;
@@ -45,11 +45,11 @@
     opacity: 0.7;
     transition: 0.3s;
 }
-.authButton:hover{
+button.auth:hover{
     opacity: 1;
 
 }
-.authButton svg{
+button.auth svg{
     margin-right: 6px;
     font-size: 18px;
     font-weight: 300;
