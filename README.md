@@ -12,7 +12,7 @@ Personal Budget Tracker is a web application that allows you to manage your pers
 - [Folder Structure](#folder-structure)
 - [Contributing](#contributing)
 - [Back End](https://github.com/Joseph-Carter/Budget-App-Backend)
-- [Live-Site](https://shimmering-queijadas-669f99.netlify.app)
+- [Live-Site](https://carters-capital.netlify.app/)
 
 ## Introduction
 
