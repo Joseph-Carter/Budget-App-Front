@@ -3,7 +3,7 @@ import React from "react";
 const Homepage = () => {
   return (
     <div className="Homepage">
-      <img src="src/assets/CarterCapImage.jpg" className="homeimage"></img>
+      <img src="public/CarterCapImage.jpg" className="homeimage"></img>
       <div className="Welcome">
         <h2>Welcome to Carter Capital</h2>
         <h1>Best place for budgeting and keeping track of your money!!</h1>

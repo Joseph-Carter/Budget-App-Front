@@ -10,7 +10,7 @@ const NavBar = () => {
       <div className="navbar">
         <div>
           <Link to="/">
-            <img src="src/assets/CarterCap.png" className="carterLogo"></img>
+            <img src="public/CarterCap.png" className="carterLogo"></img>
           </Link>
         </div>
         <div className="navLinks">
