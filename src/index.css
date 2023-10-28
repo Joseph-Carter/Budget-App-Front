@@ -24,3 +24,6 @@ body {
   justify-content: center;
   flex-direction: column;
 }
+.Homepage {
+  font-family: 'Lato', sans-serif;
+}
